@@ -10,12 +10,12 @@ Corporation. Built to support the RAJUK WASH Action Plan 2025.
 
 ## What this shows
 
-- 596 digitized existing public toilets across all three corporations
-- 47 facilities assessed as good quality
+- 610 digitized existing public toilets across all three corporations
+- 48 facilities assessed as good quality
 - 23 zones classified into demand tiers using a 200 m / 400 m / 600 m
   walking-distance standard (commercial, mixed-use, and residential areas
   respectively)
-- 657 proposed new toilet sites and 83 proposed renovation sites
+- 687 proposed new toilet sites and 86 proposed renovation sites
 - Zoom-responsive marker clustering, corporation and phase filtering,
   fit-to-city view
 
