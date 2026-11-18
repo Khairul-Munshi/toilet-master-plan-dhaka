@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<!doctype html><html lang="en" translate="no" class="notranslate"><head><meta charset="utf-8"><meta name="google" content="notranslate"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="description" content="Interactive Public Toilet Master Plan map for Dhaka North, Dhaka South and Narayanganj City Corporations — RAJUK WASH Action Plan 2025. Web map by Khairul Munshi, Bhumijo.">
 <style>html,body{margin:0;padding:0}[hidden]{display:none!important}</style><script>
 /* Stand-alone (view-only) runtime: downloads go straight to the browser; editing is only available in the claude.ai version. */
@@ -1684,6 +1684,8 @@ svg.leaflet-image-layer.leaflet-interactive path {
 <script id="s-jspdf" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script id="pg-app">
 document.getElementById('root').innerHTML = document.getElementById('pg-markup').textContent;
+// the page has its own বাংলা/English switch: stop browser auto-translate (it rewrites labels and breaks the map)
+(()=>{ const h=document.documentElement; h.setAttribute('translate','no'); h.classList.add('notranslate'); if(!h.lang) h.lang='en'; document.body.setAttribute('translate','no'); document.body.classList.add('notranslate'); if(!document.querySelector('meta[name=google]')){ const m=document.createElement('meta'); m.name='google'; m.content='notranslate'; document.head.appendChild(m); } })();
 // pristine (English) copy of the credits, shown inside the Notes panel
 const CREDITS_SRC = (()=>{ const e=document.querySelector('#creditsModalOverlay .credits-modal-body'); if(!e) return null; const c=e.cloneNode(true); c.querySelectorAll('.credits-method').forEach(x=>{ const h=x.previousElementSibling; if(h&&h.tagName==='H3') h.remove(); x.remove(); }); return c; })();
 /* Dhaka Public Toilet Master Plan — interactive web map
