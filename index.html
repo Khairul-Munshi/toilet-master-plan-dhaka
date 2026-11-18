@@ -2288,7 +2288,9 @@ const ZONE_HIDDEN_STYLE = { color:'#2a2a2a', weight:0, dashArray:null, fillOpaci
 let currentPhase = 1, corpFilter = 'ALL', focusZone = null, enabledKeys;
 
 const zp = z => { const m=String(z==null?'':z).match(/^Zone[-\s]*0*(\d+)$/i); if(!m) return String(z==null?'':z); return LANG==='bn' ? 'অঞ্চল '+toBnDigits(m[1]) : 'Zone '+m[1]; };
+const NCC_ZONE_NO = {'Kadamrasul Zone':'01','Sadar Zone':'02','Shiddhirganj Zone':'03'};   // NC-01 … NC-03
 function zoneShortLabel(corp, zoneName){
+  if(corp==='NCC' && NCC_ZONE_NO[zoneName]) return (LANG==='bn' ? 'নাগঞ্জ-'+toBnDigits(NCC_ZONE_NO[zoneName]) : 'NC-'+NCC_ZONE_NO[zoneName]);
   if(LANG==='bn'){ const pre={DNCC:'উত্তর',DSCC:'দক্ষিণ',NCC:'নাগঞ্জ'}[corp]||''; if(/^Zone-\d+$/.test(zoneName)) return pre+'-'+toBnDigits(zoneName.replace('Zone-',''));
     return pre+'-'+(ZONE_NAME_BN[zoneName]||zoneName).replace(/\s*অঞ্চল$/,''); }
   const prefix = corpPrefix[corp] || '';
